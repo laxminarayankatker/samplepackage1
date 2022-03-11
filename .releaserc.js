@@ -12,6 +12,7 @@ module.exports = {
         }],
     ],
     branches: [
-        'main'
+        'main',
+        { name: 'dev', prerelease: 'dev', channel: 'dev' }
     ],
 }
