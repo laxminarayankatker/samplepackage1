@@ -6,3 +6,8 @@ trying again
 try  a fix
 try a feat
 try a breaking change with fix!
+
+try to add a breaking change with sourctree
+
+feat(*): test incrementing major version1
+BREAKING CHANGE: major version1 , how to increment it
