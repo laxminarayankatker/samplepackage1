@@ -1,0 +1,29 @@
+name: prod-release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  prod-release:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Use NodeJS ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+
+      - name: Install semantic-release npm globally
+        run: npm install -g semantic-release
+
+      - name: Create new release
+        id: release
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: npx semantic-release
