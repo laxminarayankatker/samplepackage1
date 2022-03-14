@@ -43,7 +43,7 @@ jobs:
         - name: Install semantic-release npm globally
           run: npm install -g semantic-release
         - name: Install dependencies and build 🔧
-          run: npm ci
+          run: npm install
         - name: Publish package on NPM
           run: npx semantic-release
           env:
