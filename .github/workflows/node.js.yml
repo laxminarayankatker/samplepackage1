@@ -27,3 +27,22 @@ jobs:
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: npx semantic-release
+  publish:
+        runs-on: ubuntu-latest
+        
+        if: ${{ github.ref == 'refs/heads/main' }}
+        needs: [prod-release]
+        steps: 
+        - uses: actions/checkout@v2
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v2
+          with:
+            node-version: ${{ matrix.node-version }}
+            
+        - name: Install semantic-release npm globally
+          run: npm install -g semantic-release
+        - run: npm ci
+        - run: npx semantic-release
+          env: 
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
