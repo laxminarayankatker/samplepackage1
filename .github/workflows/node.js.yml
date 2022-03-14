@@ -47,7 +47,7 @@ jobs:
         - name: Install dependencies and build 🔧
           run: npm install
         - name: Publish package on NPM
-          run: npx semantic-release
+          run: npm publish
           env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
