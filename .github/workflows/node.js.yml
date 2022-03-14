@@ -41,7 +41,6 @@ jobs:
             
         - name: Install semantic-release npm globally
           run: npm install -g semantic-release
-        - run: npm ci
         - run: npx semantic-release
           env: 
             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
