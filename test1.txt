@@ -12,3 +12,7 @@ try to add a breaking change with sourctree
 feat(*): test incrementing major version1
 BREAKING CHANGE: major version1 , how to increment it
 cxvxcvx
+##########################
+current version is 4.1.0
+Add a fix and merge to main branch
+##########################
