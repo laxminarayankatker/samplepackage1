@@ -39,9 +39,13 @@ jobs:
           with:
             node-version: ${{ matrix.node-version }}
             registry-url: 'https://registry.npmjs.org'
+            
+        - name: Install semantic-release npm globally
+          run: npm install -g semantic-release
         - name: Install dependencies and build 🔧
-          run: npm install
+          run: npm ci
         - name: Publish package on NPM
-          run: npm publish
+          run: npx semantic-release
           env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
