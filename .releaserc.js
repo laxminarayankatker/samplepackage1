@@ -9,7 +9,8 @@ module.exports = {
             "writerOpts": {
                 "commitsSort": ["subject", "scope"]
             }
-        }]
+        }],
+        "@semantic-release/npm"
     ],
     branches: [
         'main',
