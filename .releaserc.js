@@ -10,6 +10,7 @@ module.exports = {
                 "commitsSort": ["subject", "scope"]
             }
         }],
+        "@semantic-release/npm"
     ],
     branches: [
         'main',
