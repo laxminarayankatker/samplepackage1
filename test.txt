@@ -2,3 +2,5 @@ This is a test file.
 I have modified the test file
 I am attempting upgrading minor version
 xdfddfg
+
+test adding a breaking change and merge to dev branch
